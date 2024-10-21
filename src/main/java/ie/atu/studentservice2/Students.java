@@ -1,6 +1,6 @@
 package ie.atu.studentservice2;
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,10 +9,11 @@ import org.springframework.data.annotation.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class student {
+public class Students {
+
     @Id
     @NotEmpty
     private String studentId;
@@ -24,5 +25,4 @@ public class student {
     private String email;
     @NotEmpty
     private String dateOfBirth;
-
 }
