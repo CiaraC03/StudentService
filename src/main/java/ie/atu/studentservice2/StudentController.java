@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class StudentController {
@@ -18,6 +19,17 @@ public class StudentController {
         this.studentService = studentService;
         this.enrolementServiceClient = enrolementServiceClient;
     }
+
+    @GetMapping("/students")
+    public List<Students> getStudentList(){
+        return studentService.getStudentList();
+    }
+
+    @PostMapping("/students")
+    public Students returnStudents(@RequestBody Students students){
+        return studentService.returnStudent(students);
+    }
+
 
     @PostMapping("/student/{studentId}")
     public String retreiveStudent(@Valid @RequestBody Students students){
